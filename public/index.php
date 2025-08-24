@@ -14,6 +14,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Nabil\MVC\app\Router;
 use Nabil\MVC\controller\HomeController;
 use Nabil\MVC\controller\ProductController;
+use Nabil\MVC\middleware\AuthMiddleware;
 
 // use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\HomeController;
 // use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\ProductController;
@@ -23,8 +24,11 @@ use Nabil\MVC\controller\ProductController;
 Router::add('GET', '/products/([0-9a-zA-Z]*)/categories/([0-9a-zA-Z]*)', ProductController::class, 'categories');
 
 Router::add('GET', '/', HomeController::class, 'index');
-Router::add('GET', '/hello', HomeController::class, 'hello');
-Router::add('GET', '/world', HomeController::class, 'world');
+
+// kalau mau akses hello dan world, harus login dulu ngab
+Router::add('GET', '/hello', HomeController::class, 'hello', [AuthMiddleware::class]);
+Router::add('GET', '/world', HomeController::class, 'world', [AuthMiddleware::class]);
+
 Router::add('GET', '/about', HomeController::class, 'about');
 
 Router::run(); // jalankan routernya
