@@ -9,6 +9,7 @@ class HomeController
 
     function index(): void
     {
+        // ini contoh model, yang dikirimkan ke view
         $model = [
             "title" => "Belajar PHP MVC",
             "content" => "Selamat Belajar PHP MVC dari Programmer Zaman Now"
@@ -32,18 +33,21 @@ class HomeController
         echo "Author : Mohammad Nabil Fadilah";
     }
 
-    // function login(): void
-    // {
-    //     $request = [
-    //         "username" => $_POST['username'],
-    //         "password" => $_POST['password']
-    //     ];
+    // login
+    function login(): void
+    {
+        // data(model) request yang mengambil data usernama dan password
+        $request = [
+            "username" => $_POST['username'],
+            "password" => $_POST['password']
+        ];
 
-    //     $user = [];
+        $user = [];
 
-    //     $response = [
-    //         "message" => "Login Sukses"
-    //     ];
-    //     // kirimkan response ke view
-    // }
+        // nah nanti tampilkan response hasil datanya
+        $response = [
+            "message" => "Login Sukses"
+        ];
+        // kirimkan response ke view
+    }
 }
