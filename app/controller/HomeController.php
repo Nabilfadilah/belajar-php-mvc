@@ -15,7 +15,8 @@ class HomeController
             "content" => "Selamat Belajar PHP MVC dari Programmer Zaman Now"
         ];
 
-        View::render('Home/index', $model);
+        // data yang dikirimkan dari variable model, dari class view
+        View::render('home/index', $model);
     }
 
     function hello(): void

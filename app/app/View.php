@@ -2,6 +2,7 @@
 
 namespace Nabil\MVC\app;
 
+// class untuk view yang render view 
 class View
 {
 
