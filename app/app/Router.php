@@ -73,6 +73,8 @@ class Router
              * Kita bungkus dengan delimiters "#^" dan "$#" supaya:
              * - ^ menandakan awal string, $ menandakan akhir string (match harus full, bukan sebagian).
              * - Contoh: jika path '/user/(\d+)', maka URL '/user/42' akan match dan menangkap '42'.
+             * - awal dan akhir tidak menggunakan '/' karena '/' banyak digunakan di URL 
+             * 
              */
             $pattern = "#^" . $route['path'] . "$#";
 
