@@ -1,6 +1,6 @@
 {
-    "name": "nabil/mvc",
-    "description": "Belajar PHP MVC",
+    "name": "nabil/login-management",
+    "description": "Project Login Management",
     "type": "project",
     "authors": [
         {
